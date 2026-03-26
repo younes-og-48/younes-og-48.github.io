@@ -3,103 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Younes Mahmoud Yassine — Développeur Full Stack</title>
+<title>Younes Mahmoud Yassine - Developpeur Full Stack</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #07090f; --bg2: #0c0f1a; --surface: #111827; --border: #1e2d3d;
-  --accent: #38bdf8; --green: #4ade80; --purple: #a78bfa;
-  --text: #e2e8f0; --muted: #5a7a96;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; overflow-x: hidden; }
+body { background: #ffffff; color: #0a0a0a; font-family: 'Syne', sans-serif; overflow-x: hidden; }
 
-#progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--purple)); z-index: 200; width: 0%; }
+#progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #7c3aed, #a855f7); z-index: 200; width: 0%; }
 
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
-nav.scrolled { background: rgba(7,9,15,.92); backdrop-filter: blur(16px); border-color: var(--border); }
-.logo { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent); letter-spacing: 2px; }
+nav.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-color: #e5e7eb; }
+.logo { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7c3aed; letter-spacing: 2px; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
-.nav-links a:hover { color: var(--accent); }
+.nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b7280; text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: #7c3aed; }
 
-.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 60px 80px; position: relative; overflow: hidden; }
-.hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(56,189,248,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.04) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent); mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent); }
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 60px 80px; position: relative; overflow: hidden; background: #ffffff; }
+.hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(124,58,237,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(124,58,237,.05) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent); mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent); }
 .glow { position: absolute; border-radius: 50%; pointer-events: none; animation: breathe 7s ease-in-out infinite; }
-.glow-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(167,139,250,.1) 0%, transparent 70%); top: 10%; right: 5%; }
-.glow-2 { width: 360px; height: 360px; background: radial-gradient(circle, rgba(56,189,248,.07) 0%, transparent 70%); bottom: 15%; left: 2%; animation-delay: -3.5s; }
+.glow-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,.07) 0%, transparent 70%); top: 10%; right: 5%; }
+.glow-2 { width: 360px; height: 360px; background: radial-gradient(circle, rgba(168,85,247,.05) 0%, transparent 70%); bottom: 15%; left: 2%; animation-delay: -3.5s; }
 @keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
 
 .hero-inner { position: relative; z-index: 2; max-width: 860px; }
-.badge { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--green); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; opacity: 0; animation: fadeUp .7s .1s forwards; }
-.badge-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: blink 2s infinite; }
+.badge { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #059669; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; opacity: 0; animation: fadeUp .7s .1s forwards; }
+.badge-dot { width: 7px; height: 7px; background: #059669; border-radius: 50%; animation: blink 2s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
 
 .hero h1 { font-size: clamp(52px,8vw,100px); font-weight: 900; line-height: .93; letter-spacing: -3px; margin-bottom: 16px; opacity: 0; animation: fadeUp .8s .25s forwards; }
-.line1 { display: block; color: var(--text); }
-.line2 { display: block; background: linear-gradient(120deg, var(--accent), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.tagline { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted); margin-bottom: 24px; letter-spacing: 1px; opacity: 0; animation: fadeUp .8s .4s forwards; }
-.tagline em { color: var(--accent); font-style: normal; }
-.hero-bio { font-size: 17px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 48px; opacity: 0; animation: fadeUp .8s .55s forwards; }
+.line1 { display: block; color: #0a0a0a; }
+.line2 { display: block; background: linear-gradient(120deg, #7c3aed, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.tagline { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #6b7280; margin-bottom: 24px; letter-spacing: 1px; opacity: 0; animation: fadeUp .8s .4s forwards; }
+.tagline em { color: #7c3aed; font-style: normal; }
+.hero-bio { font-size: 17px; color: #4b5563; line-height: 1.8; max-width: 520px; margin-bottom: 48px; opacity: 0; animation: fadeUp .8s .55s forwards; }
 .cta-row { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .7s forwards; }
 .btn { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; padding: 14px 30px; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s; cursor: pointer; }
 .btn:hover { transform: translateY(-3px); }
-.btn-fill { background: linear-gradient(120deg, var(--accent), var(--purple)); color: #fff; border: none; }
-.btn-ghost { border: 1px solid var(--border); color: var(--accent); background: transparent; transition: border-color .2s, transform .2s; }
-.btn-ghost:hover { border-color: var(--accent); }
-.hero-status { position: absolute; right: 60px; bottom: 48px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 1px; text-align: right; opacity: 0; animation: fadeUp .8s 1s forwards; }
-.hero-status strong { display: block; color: var(--green); font-size: 13px; margin-bottom: 4px; }
+.btn-fill { background: linear-gradient(120deg, #7c3aed, #a855f7); color: #fff; border: none; }
+.btn-ghost { border: 1px solid #d1d5db; color: #7c3aed; background: transparent; transition: border-color .2s, transform .2s; }
+.btn-ghost:hover { border-color: #7c3aed; }
+.hero-status { position: absolute; right: 60px; bottom: 48px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b7280; letter-spacing: 1px; text-align: right; opacity: 0; animation: fadeUp .8s 1s forwards; }
+.hero-status strong { display: block; color: #059669; font-size: 13px; margin-bottom: 4px; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
 
 section { padding: 100px 60px; }
-.sec-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-.sec-label::after { content: ''; flex: 0 0 48px; height: 1px; background: var(--accent); opacity: .4; }
-.sec-title { font-size: clamp(34px,5vw,60px); font-weight: 900; letter-spacing: -2px; line-height: 1; margin-bottom: 60px; }
+.sec-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7c3aed; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.sec-label::after { content: ''; flex: 0 0 48px; height: 1px; background: #7c3aed; opacity: .4; }
+.sec-title { font-size: clamp(34px,5vw,60px); font-weight: 900; letter-spacing: -2px; line-height: 1; margin-bottom: 60px; color: #0a0a0a; }
 
-#competences { background: var(--bg2); }
+#competences { background: #f9fafb; }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 14px; }
-.skill-group { background: var(--surface); border: 1px solid var(--border); padding: 28px 30px; transition: border-color .3s, transform .3s; }
-.skill-group:hover { border-color: rgba(56,189,248,.35); transform: translateY(-4px); }
-.sg-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.skill-group { background: #ffffff; border: 1px solid #e5e7eb; padding: 28px 30px; transition: border-color .3s, transform .3s; }
+.skill-group:hover { border-color: #7c3aed; transform: translateY(-4px); }
+.sg-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #7c3aed; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 13px; border: 1px solid var(--border); color: var(--text); transition: border-color .2s, color .2s; }
-.pill:hover { border-color: var(--accent); color: var(--accent); }
+.pill { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 13px; border: 1px solid #e5e7eb; color: #374151; transition: border-color .2s, color .2s; }
+.pill:hover { border-color: #7c3aed; color: #7c3aed; }
 
-#projets { background: var(--bg); }
+#projets { background: #ffffff; }
 .projects-list { display: flex; flex-direction: column; gap: 3px; }
-.pcard { background: var(--surface); border: 1px solid var(--border); padding: 42px 48px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: start; position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
-.pcard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--accent), var(--purple)); transform: scaleY(0); transform-origin: top; transition: transform .35s; }
-.pcard:hover { border-color: rgba(56,189,248,.3); transform: translateX(5px); }
+.pcard { background: #ffffff; border: 1px solid #e5e7eb; padding: 42px 48px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: start; position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
+.pcard::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #7c3aed, #a855f7); transform: scaleY(0); transform-origin: top; transition: transform .35s; }
+.pcard:hover { border-color: #7c3aed; transform: translateX(5px); }
 .pcard:hover::before { transform: scaleY(1); }
-.pcard.featured { border-color: rgba(56,189,248,.2); background: linear-gradient(135deg, #0d1117 0%, #111827 100%); }
+.pcard.featured { border-color: rgba(124,58,237,.3); background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); }
 .pcard.featured::before { transform: scaleY(1); }
-.feat-badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #000; background: linear-gradient(90deg, var(--accent), var(--purple)); padding: 5px 14px; margin-bottom: 18px; }
-.p-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 14px; }
-.p-title { font-size: 26px; font-weight: 800; letter-spacing: -.5px; margin-bottom: 12px; line-height: 1.2; }
+.feat-badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; background: linear-gradient(90deg, #7c3aed, #a855f7); padding: 5px 14px; margin-bottom: 18px; }
+.p-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #9ca3af; letter-spacing: 2px; margin-bottom: 14px; }
+.p-title { font-size: 26px; font-weight: 800; letter-spacing: -.5px; margin-bottom: 12px; line-height: 1.2; color: #0a0a0a; }
 .pcard.featured .p-title { font-size: 32px; }
-.p-desc { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+.p-desc { font-size: 15px; color: #4b5563; line-height: 1.75; margin-bottom: 24px; }
 .p-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.p-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 5px 11px; border: 1px solid var(--border); color: var(--muted); }
+.p-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 5px 11px; border: 1px solid #e5e7eb; color: #6b7280; }
 .p-links { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; min-width: 130px; }
-.p-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 7px; transition: gap .2s; white-space: nowrap; }
+.p-link { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #7c3aed; text-decoration: none; display: flex; align-items: center; gap: 7px; transition: gap .2s; white-space: nowrap; }
 .p-link:hover { gap: 11px; }
-.p-link.live { color: var(--green); }
+.p-link.live { color: #059669; }
 .pcard.soon { border-style: dashed; opacity: .45; }
 .pcard.soon::before { display: none; }
 
-#contact { background: var(--bg2); }
-.contact-intro { font-size: 17px; color: var(--muted); line-height: 1.8; max-width: 600px; margin-bottom: 48px; }
+#contact { background: #f9fafb; }
+.contact-intro { font-size: 17px; color: #4b5563; line-height: 1.8; max-width: 600px; margin-bottom: 48px; }
 .contact-grid { display: flex; flex-direction: column; gap: 12px; max-width: 680px; }
-.c-item { display: flex; align-items: center; gap: 20px; padding: 22px 28px; background: var(--surface); border: 1px solid var(--border); text-decoration: none; color: var(--text); transition: border-color .3s, transform .3s; }
-.c-item:hover { border-color: rgba(56,189,248,.35); transform: translateX(8px); }
-.c-icon { width: 40px; height: 40px; min-width: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); color: var(--accent); flex-shrink: 0; }
-.c-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-.c-val { font-size: 15px; color: var(--text); }
+.c-item { display: flex; align-items: center; gap: 20px; padding: 22px 28px; background: #ffffff; border: 1px solid #e5e7eb; text-decoration: none; color: #0a0a0a; transition: border-color .3s, transform .3s; }
+.c-item:hover { border-color: #7c3aed; transform: translateX(8px); }
+.c-icon { width: 40px; height: 40px; min-width: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #e5e7eb; color: #7c3aed; flex-shrink: 0; }
+.c-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #9ca3af; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.c-val { font-size: 15px; color: #0a0a0a; }
 
-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; }
-.f-copy { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
-.f-copy span { color: var(--accent); }
+footer { background: #0a0a0a; border-top: 1px solid #1f2937; padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; }
+.f-copy { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b7280; }
+.f-copy span { color: #a855f7; }
 
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.vis { opacity: 1; transform: translateY(0); }
@@ -138,43 +133,56 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
       <span class="line1">Younes</span>
       <span class="line2">Mahmoud Yassine</span>
     </h1>
-    <p class="tagline">&lt; Développeur <em>Full Stack</em> · Étudiant Informatique /&gt;</p>
-    <p class="hero-bio">En 2ème année d'Informatique Appliquée à l'Université Mohammed Premier d'Oujda. Je construis des applications web complètes — du frontend au backend, en passant par les bases de données et les structures de données en C.</p>
+    <p class="tagline">&lt; Developpeur <em>Full Stack</em> &middot; Etudiant Informatique /&gt;</p>
+    <p class="hero-bio">En 2eme annee d'Informatique Appliquee a l'Universite Mohammed Premier d'Oujda. Je construis des applications web completes du frontend au backend, en passant par les bases de donnees et les structures de donnees en C.</p>
     <div class="cta-row">
       <a href="#projets" class="btn btn-fill">Voir mes projets</a>
       <a href="#contact" class="btn btn-ghost">Me contacter</a>
-      <a href="https://github.com/younes-og-48" target="_blank" class="btn btn-ghost">GitHub <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <a href="https://github.com/younes-og-48" target="_blank" class="btn btn-ghost">GitHub</a>
     </div>
   </div>
   <div class="hero-status">
-    <strong>&#127919; Je cherche un stage</strong>
-    Oujda · Maroc · Remote OK
+    <strong>Je cherche un stage</strong>
+    Oujda &middot; Maroc &middot; Remote OK
   </div>
 </section>
 
 <section id="competences">
-  <div class="sec-label reveal">Compétences</div>
-  <h2 class="sec-title reveal">Ce que je maîtrise</h2>
+  <div class="sec-label reveal">Competences</div>
+  <h2 class="sec-title reveal">Ce que je maitrise</h2>
   <div class="skills-grid">
     <div class="skill-group reveal">
       <div class="sg-name">Frontend</div>
-      <div class="pills"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Vue.js</span></div>
+      <div class="pills">
+        <span class="pill">HTML5</span><span class="pill">CSS3</span>
+        <span class="pill">JavaScript</span><span class="pill">TypeScript</span><span class="pill">Vue.js</span>
+      </div>
     </div>
     <div class="skill-group reveal">
       <div class="sg-name">Backend</div>
-      <div class="pills"><span class="pill">PHP 8</span><span class="pill">Laravel</span><span class="pill">Python</span></div>
+      <div class="pills">
+        <span class="pill">PHP 8</span><span class="pill">Laravel</span><span class="pill">Python</span>
+      </div>
     </div>
     <div class="skill-group reveal">
-      <div class="sg-name">Systèmes &amp; Algo</div>
-      <div class="pills"><span class="pill">C</span><span class="pill">C++</span><span class="pill">Structures de données</span><span class="pill">Algorithmique</span></div>
+      <div class="sg-name">Systemes &amp; Algo</div>
+      <div class="pills">
+        <span class="pill">C</span><span class="pill">C++</span>
+        <span class="pill">Structures de donnees</span><span class="pill">Algorithmique</span>
+      </div>
     </div>
     <div class="skill-group reveal">
-      <div class="sg-name">Base de données</div>
-      <div class="pills"><span class="pill">MySQL</span><span class="pill">SQL</span><span class="pill">phpMyAdmin</span></div>
+      <div class="sg-name">Base de donnees</div>
+      <div class="pills">
+        <span class="pill">MySQL</span><span class="pill">SQL</span><span class="pill">phpMyAdmin</span>
+      </div>
     </div>
     <div class="skill-group reveal">
       <div class="sg-name">Outils</div>
-      <div class="pills"><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">XAMPP</span><span class="pill">VS Code</span></div>
+      <div class="pills">
+        <span class="pill">Git</span><span class="pill">GitHub</span>
+        <span class="pill">XAMPP</span><span class="pill">VS Code</span>
+      </div>
     </div>
   </div>
 </section>
@@ -186,48 +194,72 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 
     <div class="pcard featured reveal">
       <div>
-        <div class="feat-badge">&#11088; Projet phare</div>
-        <div class="p-num">01 — E-commerce · Live + GitHub</div>
-        <h3 class="p-title">OBLOCK — Streetwear E-commerce</h3>
-        <p class="p-desc">Site e-commerce complet pour une marque streetwear marocaine, développé de A à Z. Panier persistant, sélection couleur / taille / quantité, détection automatique de la ville par IP, dark mode avec sauvegarde 24h, et un panel admin protégé avec dashboard et statistiques en temps réel.</p>
-        <div class="p-tags"><span class="p-tag">HTML5</span><span class="p-tag">CSS3</span><span class="p-tag">JavaScript</span><span class="p-tag">PHP 8</span><span class="p-tag">MySQL</span><span class="p-tag">PDO</span><span class="p-tag">Sessions PHP</span><span class="p-tag">Responsive</span></div>
+        <div class="feat-badge">Projet phare</div>
+        <div class="p-num">01 &mdash; E-commerce &middot; Live + GitHub</div>
+        <h3 class="p-title">OBLOCK &mdash; Streetwear E-commerce</h3>
+        <p class="p-desc">Site e-commerce complet pour une marque streetwear marocaine, developpe de A a Z. Panier persistant, selection couleur / taille / quantite, detection automatique de la ville par IP, dark mode avec sauvegarde 24h, et un panel admin protege avec dashboard et statistiques en temps reel.</p>
+        <div class="p-tags">
+          <span class="p-tag">HTML5</span><span class="p-tag">CSS3</span><span class="p-tag">JavaScript</span>
+          <span class="p-tag">PHP 8</span><span class="p-tag">MySQL</span><span class="p-tag">PDO</span>
+          <span class="p-tag">Sessions PHP</span><span class="p-tag">Responsive</span>
+        </div>
       </div>
       <div class="p-links">
-        <a href="http://oblock.wuaze.com" target="_blank" class="p-link live">Live Demo <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg></a>
-        <a href="https://github.com/younes-og-48/oblock" target="_blank" class="p-link">GitHub <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg></a>
+        <a href="http://oblock.wuaze.com" target="_blank" class="p-link live">
+          Live Demo
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg>
+        </a>
+        <a href="https://github.com/younes-og-48/oblock" target="_blank" class="p-link">
+          GitHub
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg>
+        </a>
       </div>
     </div>
 
     <div class="pcard reveal">
       <div>
-        <div class="p-num">02 — GitHub · Structures de données</div>
-        <h3 class="p-title">Gestionnaire d'étudiants — Liste chaînée</h3>
-        <p class="p-desc">Programme en C qui gère une liste d'étudiants via une liste chaînée simple : ajout, suppression et affichage. Exemple concret de gestion de mémoire dynamique et de structures de données fondamentales.</p>
-        <div class="p-tags"><span class="p-tag">C</span><span class="p-tag">Structures de données</span><span class="p-tag">Mémoire dynamique</span><span class="p-tag">Algorithmique</span></div>
+        <div class="p-num">02 &mdash; GitHub &middot; Structures de donnees</div>
+        <h3 class="p-title">Gestionnaire d'etudiants &mdash; Liste chainee</h3>
+        <p class="p-desc">Programme en C qui gere une liste d'etudiants via une liste chainee simple : ajout, suppression et affichage. Exemple concret de gestion de memoire dynamique et de structures de donnees fondamentales.</p>
+        <div class="p-tags">
+          <span class="p-tag">C</span><span class="p-tag">Structures de donnees</span>
+          <span class="p-tag">Memoire dynamique</span><span class="p-tag">Algorithmique</span>
+        </div>
       </div>
       <div class="p-links">
-        <a href="https://github.com/younes-og-48/student-linked-list" target="_blank" class="p-link">GitHub <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg></a>
+        <a href="https://github.com/younes-og-48/student-linked-list" target="_blank" class="p-link">
+          GitHub
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg>
+        </a>
       </div>
     </div>
 
     <div class="pcard reveal">
       <div>
-        <div class="p-num">03 — GitHub · FISTO IT Club FSO</div>
-        <h3 class="p-title">Pool C — Piscine de Programmation</h3>
-        <p class="p-desc">Participation à la piscine de programmation C du FISTO Club IT à la FSO d'Oujda. Exercices intensifs sur les pointeurs, tableaux, fonctions et structures de données.</p>
-        <div class="p-tags"><span class="p-tag">C</span><span class="p-tag">Algorithmique</span><span class="p-tag">FSO · Oujda</span><span class="p-tag">Club IT</span></div>
+        <div class="p-num">03 &mdash; GitHub &middot; FISTO IT Club FSO</div>
+        <h3 class="p-title">Pool C &mdash; Piscine de Programmation</h3>
+        <p class="p-desc">Participation a la piscine de programmation C du FISTO Club IT a la FSO d'Oujda. Exercices intensifs sur les pointeurs, tableaux, fonctions et structures de donnees.</p>
+        <div class="p-tags">
+          <span class="p-tag">C</span><span class="p-tag">Algorithmique</span>
+          <span class="p-tag">FSO Oujda</span><span class="p-tag">Club IT</span>
+        </div>
       </div>
       <div class="p-links">
-        <a href="https://github.com/younes-og-48/Pool_C" target="_blank" class="p-link">GitHub <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg></a>
+        <a href="https://github.com/younes-og-48/Pool_C" target="_blank" class="p-link">
+          GitHub
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12L12 2M12 2H6M12 2V8"/></svg>
+        </a>
       </div>
     </div>
 
     <div class="pcard soon reveal">
       <div>
-        <div class="p-num">04 — En cours</div>
+        <div class="p-num">04 &mdash; En cours</div>
         <h3 class="p-title">Prochain projet...</h3>
-        <p class="p-desc">D'autres projets en développement — restez connectés.</p>
-        <div class="p-tags"><span class="p-tag">Laravel</span><span class="p-tag">Vue.js</span><span class="p-tag">Coming soon</span></div>
+        <p class="p-desc">D'autres projets en developpement, restez connectes.</p>
+        <div class="p-tags">
+          <span class="p-tag">Laravel</span><span class="p-tag">Vue.js</span><span class="p-tag">Coming soon</span>
+        </div>
       </div>
       <div class="p-links"></div>
     </div>
@@ -238,30 +270,43 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 <section id="contact">
   <div class="sec-label reveal">Contact</div>
   <h2 class="sec-title reveal">Travaillons ensemble</h2>
-  <p class="contact-intro reveal">Je suis à la recherche d'un <strong style="color:var(--text)">stage</strong> pour apprendre en conditions réelles et contribuer à de vrais projets. Contactez-moi par le canal qui vous convient !</p>
+  <p class="contact-intro reveal">Je suis a la recherche d'un <strong>stage</strong> pour apprendre en conditions reelles. Contactez-moi par le canal qui vous convient !</p>
   <div class="contact-grid">
+
     <a href="mailto:younes.mahmoud6@outlook.fr" class="c-item reveal">
-      <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg></div>
+      <div class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg>
+      </div>
       <div><div class="c-label">Email</div><div class="c-val">younes.mahmoud6@outlook.fr</div></div>
     </a>
+
     <a href="https://wa.me/212652495627" target="_blank" class="c-item reveal">
-      <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+      <div class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
       <div><div class="c-label">WhatsApp</div><div class="c-val">+212 652 495 627</div></div>
     </a>
+
     <a href="https://www.linkedin.com/in/younes-mahmoud-yassine-330899380" target="_blank" class="c-item reveal">
-      <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+      <div class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </div>
       <div><div class="c-label">LinkedIn</div><div class="c-val">Younes Mahmoud Yassine</div></div>
     </a>
+
     <a href="https://github.com/younes-og-48" target="_blank" class="c-item reveal">
-      <div class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></div>
+      <div class="c-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </div>
       <div><div class="c-label">GitHub</div><div class="c-val">younes-og-48</div></div>
     </a>
+
   </div>
 </section>
 
 <footer>
-  <div class="f-copy">&#169; 2025 <span>Younes Mahmoud Yassine</span> · UMP Oujda &#127474;&#127462;</div>
-  <div class="f-copy">Fait avec <span>&#9825;</span> &amp; du café &#9749;</div>
+  <div class="f-copy">2025 <span>Younes Mahmoud Yassine</span> &middot; UMP Oujda</div>
+  <div class="f-copy">Fait avec <span>coeur</span> &amp; du cafe</div>
 </footer>
 
 <script>
