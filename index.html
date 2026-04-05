@@ -100,13 +100,28 @@ footer { background: #0a0a0a; border-top: 1px solid #1f2937; padding: 32px 60px;
 .reveal.vis { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
-  nav, section, footer { padding-left: 20px; padding-right: 20px; }
-  nav { padding-top: 18px; padding-bottom: 18px; }
-  .hero { padding: 110px 20px 80px; }
-  .pcard { grid-template-columns: 1fr; padding: 28px 24px; }
-  .p-links { flex-direction: row; }
-  footer { flex-direction: column; gap: 12px; text-align: center; }
+  nav { padding: 16px 20px; }
+  nav .nav-links { gap: 16px; }
+  nav .nav-links a { font-size: 10px; }
+  section { padding: 70px 20px; }
+  footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
+  .hero { padding: 100px 20px 60px; }
+  .hero h1 { font-size: 42px; letter-spacing: -2px; }
+  .hero-bio { font-size: 15px; }
+  .tagline { font-size: 11px; }
+  .badge { font-size: 10px; }
+  .cta-row { flex-direction: column; }
+  .btn { justify-content: center; padding: 13px 20px; font-size: 11px; }
   .hero-status { display: none; }
+  .sec-title { font-size: 30px; letter-spacing: -1px; margin-bottom: 36px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .pcard { grid-template-columns: 1fr; padding: 24px 20px; }
+  .pcard.featured .p-title { font-size: 22px; }
+  .p-title { font-size: 20px; }
+  .p-links { flex-direction: row; align-items: flex-start; margin-top: 8px; }
+  .contact-grid { gap: 10px; }
+  .c-item { padding: 16px 18px; }
+  .c-val { font-size: 13px; word-break: break-all; }
 }
 </style>
 </head>
@@ -273,11 +288,11 @@ footer { background: #0a0a0a; border-top: 1px solid #1f2937; padding: 32px 60px;
   <p class="contact-intro reveal">Je suis a la recherche d'un <strong>stage</strong> pour apprendre en conditions reelles. Contactez-moi par le canal qui vous convient !</p>
   <div class="contact-grid">
 
-    <a href="mailto:younes.mahmoud6@outlook.fr" class="c-item reveal">
+    <a href="/cdn-cgi/l/email-protection#daa3b5afb4bfa9f4b7bbb2b7b5afbeec9ab5afaeb6b5b5b1f4bca8" class="c-item reveal">
       <div class="c-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg>
       </div>
-      <div><div class="c-label">Email</div><div class="c-val">younes.mahmoud6@outlook.fr</div></div>
+      <div><div class="c-label">Email</div><div class="c-val"><span class="__cf_email__" data-cfemail="354c5a405b50461b58545d585a405103755a4041595a5a5e1b5347">[email&#160;protected]</span></div></div>
     </a>
 
     <a href="https://wa.me/212652495627" target="_blank" class="c-item reveal">
@@ -309,7 +324,7 @@ footer { background: #0a0a0a; border-top: 1px solid #1f2937; padding: 32px 60px;
   <div class="f-copy">Fait avec <span>coeur</span> &amp; du cafe</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 window.addEventListener('scroll', function() {
   var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
   document.getElementById('progress').style.width = pct + '%';
